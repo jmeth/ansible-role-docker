@@ -1,0 +1,12 @@
+---
+- name: Docker Socket service
+  template: src=docker.socket.j2 dest=/usr/lib/systemd/system/docker.socket
+  notify:
+    - reload systemd
+    - restart docker socket
+
+- name: Docker service
+  template: src=docker.service.j2 dest=/usr/lib/systemd/system/docker.service
+  notify:
+    - reload systemd
+    - restart docker service

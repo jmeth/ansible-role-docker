@@ -1,7 +1,7 @@
 # file: roles/docker/tasks/main.yml
 ---
 - name: Get Docker Binary
-  get_url: url={{docker_url}}/{{ansible_architecture}}/docker-{{docker_version}} dest=/usr/bin/docker mode=0755 validate_certs=False
+  get_url: url={{docker_url}}/{{ansible_architecture}}/docker-{{docker_version}} dest=/usr/bin/docker mode=0755
 
 - name: Create Docker group
   group: name={{docker_group}} state=present

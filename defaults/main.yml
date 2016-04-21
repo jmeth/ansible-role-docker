@@ -1,0 +1,9 @@
+# file: roles/docker/defaults/main.yml
+---
+docker_url: https://get.docker.com/builds/Linux
+docker_version: 1.9.1
+docker_group: docker
+docker_port: 2375
+docker_compose_url: https://github.com/docker/compose/releases/download
+docker_compose_version: 1.5.2
+bridge_ip: 172.17.0.1

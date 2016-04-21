@@ -9,10 +9,6 @@
 - name: Add Vagrant User to Docker group
   user: name={{ansible_ssh_user}} groups={{docker_group}} append=yes
 
-- name: Docker sysconfig
-  template: src=docker.sysconfig.j2 dest=/etc/sysconfig/docker
-  notify: restart docker service
-
 - name: Get Docker-Compose Binary
   get_url: url={{docker_compose_url}}/{{docker_compose_version}}/docker-compose-{{ansible_system}}-{{ansible_architecture}} dest=/usr/bin/docker-compose mode=0755
 

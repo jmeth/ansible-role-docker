@@ -1,0 +1,10 @@
+---
+- name: Docker Defaults
+  template: src=docker.default.j2 dest=/etc/default/docker
+  notify:
+    - restart docker upstart
+
+- name: Docker service
+  template: src=docker.upstart.j2 dest=/etc/init.d/docker owner=root group=root mode=0755
+  notify:
+    - restart docker upstart

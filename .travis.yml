@@ -10,7 +10,7 @@ env:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y curl
-  - sudo apt-get purge docker-engine
+  - sudo apt-get purge -y docker-engine
 
 install:
   # Install Ansible.
